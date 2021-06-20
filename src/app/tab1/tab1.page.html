@@ -7,14 +7,16 @@
 <ion-content [fullscreen]="true" color="light">
 
   <ion-searchbar placeholder="Buscar"></ion-searchbar>
+
   <ion-list>
     <ion-item-sliding *ngFor="let filme of listaVideos">
-    <ion-item lines="full">
-      <ion-thumbnail slot="end">
+    <ion-item lines="full" (click)="exibirfilme(filme)">
+      <ion-thumbnail slot="start">
         <img
         [src]="filme.cartaz"
         />
       </ion-thumbnail>
+
       <ion-label class="ion-text-wrap">
       <div>
         <h1> {{filme.nome}}</h1>
@@ -22,7 +24,7 @@
         <ion-badge color="light" *ngFor="let genero of filme.generos">
            {{genero}}
         </ion-badge>
-        <p> Ação, Fantasia, Aventura </p>
+
       </div>
       </ion-label>
 
@@ -32,7 +34,7 @@
 
     </ion-item>
 
-    <ion-item-options side="star">
+    <ion-item-options side="start">
       <ion-item-option color="laranja"(click)="exibirAlertaFavorito()" >
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-item-option>
