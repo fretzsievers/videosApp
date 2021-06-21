@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Dados do Serie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card>
+    <ion-card-header>
+      <img
+          [src]="serie.cartaz"
+      />
+
+  </ion-card-header>
+
+    <ion-card-content>
+        <p>{{serie.lancamento | date:'shortDate'}} </p>
+
+    </ion-card-content>
+    <ion-item>
+      <ion-badge color="light" *ngFor="let idGenero of serie.generos">
+        {{idGenero}}
+
+      </ion-badge>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
